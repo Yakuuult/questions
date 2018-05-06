@@ -128,7 +128,7 @@ res.status(400).send(err);
 var geometrystring = "st_geomfromtext('POINT(" + req.body.longitude + " " + req.body.latitude + ")'";
 var querystring = "INSERT into questionapp (clientid,questionid,question,answear1,answear2,answear3,answear4, answearnumber, geom) values ('"; 
 querystring = querystring + req.body.clientid + "','" + req.body.questionid + "','" + req.body.question + "','" ; querystring = querystring + req.body.answear1 + "','"+ req.body.answear2 + "','"+ req.body.answear3 + "','"+ req.body.answear4 + "','"; 
-querystring = querystring + req.body.correct + "',"+geometrystring + "))";
+querystring = querystring + req.body.answearnumber + "',"+geometrystring + "))";
 console.log(querystring);
 client.query( querystring,function(err,result) {
 done();
