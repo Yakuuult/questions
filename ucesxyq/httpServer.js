@@ -148,28 +148,48 @@ app.use(function (req, res, next) {
 app.post('/uploadData',function(req,res){
 // note that we are using POST here as we are uploading data
 // so the parameters form part of the BODY of the request rather than the RESTful API
-console.dir(req.body);
-pool.connect(function(err,client,done) {
-if(err){
-console.log("not able to get connection "+ err);
-res.status(400).send(err);
-}
-
+                                         console.dir(req.body);
+                                         pool.connect(function(err,client,done) {
+                                                                                 if(err){
+                                                                                         console.log("not able to get connection "+ err);
+                                                                                         res.status(400).send(err);
+																						 }
 // pull the geometry component together
 // note that well known text requires the points as longitude/latitude !
 // well known text should look like: 'POINT(-71.064544 42.28787)'
-var geometrystring = "st_geomfromtext('POINT(" + req.body.longitude + " " + req.body.latitude + ")'";
-var querystring = "INSERT into questionapp (clientid,questionid,question,answer1,answer2,answer3,answer4, answernumber, geom) values ('"; 
-querystring = querystring + req.body.clientid + "','" + req.body.questionid + "','" + req.body.question + "','" ; querystring = querystring + req.body.answer1 + "','"+ req.body.answer2 + "','"+ req.body.answer3 + "','"+ req.body.answer4 + "','"; 
-querystring = querystring + req.body.answernumber + "',"+geometrystring + "))";
-console.log(querystring);
+                                                                                 var geometrystring = "st_geomfromtext('POINT(" + req.body.longitude + " " + req.body.latitude + ")'";
+                                                                                 var querystring = "INSERT into questionapp (clientid,questionid,question,answer1,answer2,answer3,answer4, answernumber, geom) values ('"; querystring = querystring + req.body.clientid + "','" + req.body.questionid + "','" + req.body.question + "','" ; querystring = querystring + req.body.answer1 + "','"+ req.body.answer2 + "','"+ req.body.answer3 + "','"+ req.body.answer4 + "','";  querystring = querystring + req.body.answernumber + "',"+geometrystring + "))";
+                                                                                 console.log(querystring);
 client.query( querystring,function(err,result) {
 done();
 if(err){
 console.log(err);
 res.status(400).send(err);
 }
-res.status(200).send("row inserted");
+res.status(200).send("Question Set Succeed");
 });
 });
 });
+
+app.post('/quizUpload',function(req,res){
+// note that we are using POST here as we are uploading data
+// so the parameters form part of the BODY of the request rather than the RESTful API
+                                         console.dir(req.body);
+                                         pool.connect(function(err,client,done) {
+                                                                                 if(err){
+                                                                                         console.log("not able to get connection "+ err);
+                                                                                         res.status(400).send(err);
+																						 }
+ var quizstring = "INSERT into quizapp (questionid,answernumber) values ('"; quizstring = quizstring + req.body.questionid + "','" +  req.body.answernumber + "')";
+console.log(quizstring);
+client.query( quizstring,function(err,result) {
+done();
+if(err){
+console.log(err);
+res.status(400).send(err);
+}
+res.status(200).send("Quiz Finished");
+});
+});
+});
+
