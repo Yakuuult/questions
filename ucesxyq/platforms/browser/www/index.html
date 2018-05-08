@@ -79,36 +79,33 @@
 		   </div>
         </header>
        
-<p><label for="clientid">&nbsp Client ID</label><input type="text" size="26" id="clientid"/><br />
+<label for="clientid">&nbsp Client ID</label> <p> <input type="text" size="20" id="clientid"/><br />
 </p>
-<p><label for="questionid">&nbsp Question ID</label><input type="text" size="22" id="questionid"/><br />
+<label for="questionid">&nbsp Question ID</label> <p> <input type="text" size="20" id="questionid"/><br />
 </p>
-<p><label for="question">&nbsp Question</label><input type="text" size="25" id="question"/><br />
+<label for="question">&nbsp Question</label> <p> <input type="text" size="20" id="question"/><br />
 </p>
-<p><label for="answear1">&nbsp Answear 1</label><input type="text" size="20" id="answear1"/><br />
+<label for="answer1">&nbsp Answer 1</label> <p> <input type="text" size="20" id="answer1"/><input type="radio" name="correct" value="1" id ="answernumber1"/><br />
 </p>
-<p><label for="answear2">&nbsp Answear 2</label><input type="text" size="20" id="answear2"/><br />
+<label for="answer2">&nbsp Answer 2</label> <p> <input type="text" size="20" id="answer2"/><input type="radio" name="correct" value="2" id ="answernumber2"/><br />
 </p>
-<p><label for="answear3">&nbsp Answear 3</label><input type="text" size="20" id="answear3"/><br />
+<label for="answer3">&nbsp Answer 3</label> <p> <input type="text" size="20" id="answer3"/><input type="radio" name="correct" value="3" id ="answernumber3"/><br />
 </p>
-<p><label for="answear4">&nbsp Answear 4</label><input type="text" size="20" id="answear4"/><br />
+<label for="answer4">&nbsp Answer 4</label> <p> <input type="text" size="20" id="answer4"/><input type="radio" name="correct" value="4" id ="answernumber4"/><br />
 </p>
-<p><label for="latitude">&nbsp Latitude</label><input type="text" size="25" id="latitude"/><br />
+<p><div>&nbsp Click on the map to obtain corrdinates</div>
 </p>
-<p><label for="longitude">&nbsp Longitude</label><input type="text" size="25" id="longitude"/><br />
+<label for="latitude">&nbsp Latitude</label> <p> <input type="text" size="20" id="latitude"/><br />
 </p>
-
-<p>Which one is the correct number?</p>
-1: <input type="radio" name="correct" value="1" id ="answearnumber1"/><br />
-2: <input type="radio" name="correct" value="2" id ="answearnumber2"/><br />
-3: <input type="radio" name="correct" value="3" id ="answearnumber3"/><br />
-4: <input type="radio" name="correct" value="4" id ="answearnumber4"/><br />
-
+<label for="longitude">&nbsp Longitude</label> <p> <input type="text" size="20" id="longitude"/><br />
+</p>
 <p><div id="dataUploadResult">&nbsp The result of the upload goes here</div>
 </p>
 <p><button id="startUpload" onclick="startDataUpload()">Start Data Upload</button>
 </p>
-      </div>
+<p><input type="button" value="Refresh Page" onClick="window.location.reload()">
+</p>  
+    </div>
       <main class="mdl-layout__content mdl-color--deep-purple-50">
         <div class="mdl-grid demo-content">
           <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">

@@ -6,32 +6,32 @@ alert ("start data upload");
 var clientid = document.getElementById("clientid").value;
 var questionid = document.getElementById("questionid").value;
 var question = document.getElementById("question").value;
-var answear1 = document.getElementById("answear1").value;
-var answear2 = document.getElementById("answear2").value;
-var answear3 = document.getElementById("answear3").value;
-var answear4 = document.getElementById("answear4").value;
+var answer1 = document.getElementById("answer1").value;
+var answer2 = document.getElementById("answer2").value;
+var answer3 = document.getElementById("answer3").value;
+var answer4 = document.getElementById("answer4").value;
 //alert(name + " "+ surname + " "+module);
 var latitude = document.getElementById("latitude").value;
 var longitude = document.getElementById("longitude").value;
-var postString = "clientid="+clientid +"&questionid="+questionid+"&question="+question+"&answear1="+answear1+"&answear2="+answear2+"&answear3="+answear3+"&answear4="+answear4; 
+var postString = "clientid="+clientid +"&questionid="+questionid+"&question="+question+"&answer1="+answer1+"&answer2="+answer2+"&answer3="+answer3+"&answer4="+answer4; 
 postString = postString + "&latitude=" + latitude + "&longitude=" + longitude;
 
 // now get the radio button values
-if (document.getElementById("answearnumber1").checked) {
-var correct=document.getElementById("answearnumber1").value;
-postString=postString+"&answearnumber="+correct
+if (document.getElementById("answernumber1").checked) {
+var correct=document.getElementById("answernumber1").value;
+postString=postString+"&answernumber="+correct
 }
-if (document.getElementById("answearnumber2").checked) {
-var correct=document.getElementById("answearnumber2").value;
-postString=postString+"&answearnumber="+correct
+if (document.getElementById("answernumber2").checked) {
+var correct=document.getElementById("answernumber2").value;
+postString=postString+"&answernumber="+correct
 }
-if (document.getElementById("answearnumber3").checked) {
-var correct=document.getElementById("answearnumber3").value;
-postString=postString+"&answearnumber="+correct
+if (document.getElementById("answernumber3").checked) {
+var correct=document.getElementById("answernumber3").value;
+postString=postString+"&answernumber="+correct
 }
-if (document.getElementById("answearnumber4").checked) {
-var correct=document.getElementById("answearnumber4").value;
-postString=postString+"&answearnumber="+correct
+if (document.getElementById("answernumber4").checked) {
+var correct=document.getElementById("answernumber4").value;
+postString=postString+"&answernumber="+correct
 }
 
 

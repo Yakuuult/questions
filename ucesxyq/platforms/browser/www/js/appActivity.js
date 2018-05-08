@@ -8,12 +8,3 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 
 
  
-
-
-function showCoordinates(evt) {
-          //the map is in web mercator but display coordinates in geographic (lat, long)
-          var mp = webMercatorUtils.webMercatorToGeographic(evt.mapPoint);
-          //display mouse coordinates
-          dom.byId("info").innerHTML = mp.x.toFixed(3) + ", " + mp.y.toFixed(3);
-  }
-     
